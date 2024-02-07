@@ -4,13 +4,8 @@
         "text": "Test text"
     },
     {
-        "title": "Sarah",
-        "text": "UI",
-        "note_id": "6777"
-    },
-    {
-        "title": "New note",
-        "text": "New note text",
-        "note_id": "7d80"
+        "title": "Work on project",
+        "text": "Start working on the server side project due later this month.",
+        "note_id": "301c"
     }
 ]
