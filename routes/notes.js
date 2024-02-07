@@ -4,18 +4,17 @@ const { readAndAppend, readFromFile } = require("../helpers/fsUtils");
 
 // GET /api/notes reads db.json
 
-notes.get("/", (req, res) => {
+notes.get("/api/notes", (req, res) => {
   console.info(`${req.method} request received for notes`);
   readFromFile("../db/db.json").then((data) => res.json(JSON.parse(data)));
 });
 // POST /api/notes
-notes.post("/", (req, res) => {
+notes.post("/api/notes", (req, res) => {
   console.info(`${req.method} request received to notes`);
   const { title, text } = req.body;
 
   // If all the required properties are present
   if (title && text) {
-    // Variable for the object we will save
     const newNote = {
       title,
       text,
