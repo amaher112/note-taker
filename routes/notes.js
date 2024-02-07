@@ -1,27 +1,27 @@
 const notes = require("express").Router();
-const { v4: uuidv4 } = require("uuid");
-const { readAndAppend, readFromFile } = require("../helpers/fsUtils");
+const uuid = require("../helpers/uuid.js");
+const { readAndAppend, readFromFile } = require("../helpers/fsUtils.js");
 
 // GET /api/notes reads db.json
 
-notes.get("/api/notes", (req, res) => {
+notes.get("/notes", (req, res) => {
   console.info(`${req.method} request received for notes`);
-  readFromFile("../db/db.json").then((data) => res.json(JSON.parse(data)));
+  readFromFile("./db/db.json").then((data) => res.json(JSON.parse(data)));
 });
 // POST /api/notes
-notes.post("/api/notes", (req, res) => {
+notes.post("/notes", (req, res) => {
   console.info(`${req.method} request received to notes`);
   const { title, text } = req.body;
 
-  // If all the required properties are present
+  // If all the required properties are present, then create a newNote
   if (title && text) {
     const newNote = {
       title,
       text,
-      note_id: uuidv4(),
+      note_id: uuid(),
     };
 
-    readAndAppend(newNote, "../db/db.json");
+    readAndAppend(newNote, "./db/db.json");
 
     const response = {
       status: "success",

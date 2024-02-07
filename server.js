@@ -1,6 +1,6 @@
 const express = require("express");
 const path = require("path");
-const tasks = require('./db/db.json');
+// const tasks = require('./db/db.json');
 const api = require("./routes/notes.js");
 
 const PORT = process.env.port || 3001;
