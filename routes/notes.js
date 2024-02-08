@@ -18,7 +18,7 @@ notes.post("/notes", (req, res) => {
     const newNote = {
       title,
       text,
-      note_id: uuid(),
+      id: uuid(),
     };
     // Appends the newNote to the db.json file
     readAndAppend(newNote, "./db/db.json");
@@ -30,7 +30,7 @@ notes.post("/notes", (req, res) => {
 
     res.json(response);
   } else {
-    res.json("Error in posting feedback");
+    res.json("Error in posting note");
   }
 });
 

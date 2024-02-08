@@ -6,16 +6,11 @@
     {
         "title": "Work on project",
         "text": "Start working on the server side project due later this month.",
-        "note_id": "301c"
+        "id": "301c"
     },
     {
-        "title": "title",
-        "text": "text",
-        "note_id": "73f7"
-    },
-    {
-        "title": "Title here",
-        "text": "Text here",
-        "note_id": "daaa"
+        "title": "Research gala",
+        "text": "Need to research the mardi gras gala",
+        "id": "506f"
     }
 ]
