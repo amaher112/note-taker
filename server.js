@@ -16,11 +16,11 @@ app.use('/api', api);
 
 // GET /notes returns notes.html
 app.get("/notes", (req, res) =>
-  res.sendFile(path.join(__dirname, "./public/notes.html"))
+  res.sendFile(path.join(__dirname, "/public/notes.html"))
 );
 // Anything else returns index.html
 app.get("*", (req, res) =>
-res.sendFile(path.join(__dirname, "./public/index.html"))
+res.sendFile(path.join(__dirname, "/public/index.html"))
 );
 
 
